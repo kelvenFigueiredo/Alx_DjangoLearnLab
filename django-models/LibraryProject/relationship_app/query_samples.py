@@ -11,5 +11,5 @@ books_in_library = library.books.all()
 print("Books in Central Library:", books_in_library)
 
 # 3. Retrieve the librarian for a library
-librarian = library.librarian
+librarian = Librarian.objects.get(library=library)
 print("Librarian of Central Library:", librarian)
