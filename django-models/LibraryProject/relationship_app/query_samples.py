@@ -2,7 +2,7 @@ from relationship_app import Author, Book, Library, Librarian
 
 # Query all books by a specific  author
 author = Author.objects.get(name=author_name)
-books_by_author = author.books.all()
+books_by_author = Book.objects.filter(author=author)
 print("Books by author_name:", books_by_author)
 
 # 2. List all books in a library
