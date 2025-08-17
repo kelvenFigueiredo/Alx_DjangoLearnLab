@@ -11,8 +11,8 @@ class Author(models.Model):
 # Book model represents a book with a title, publication date, and a foreign key to the Author model
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    publication_date = models.IntegerField()
+    publication_year = models.PositiveIntegerField(null=True, blank=True)
     author = models.ForeignKey(Author, related_name='books', on_delete=models.CASCADE)  
 
     def __str__(self):
-        return f"{self.title} ({self.publication_date})"
+        return f"{self.title} ({self.publication_year})"

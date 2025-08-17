@@ -6,15 +6,15 @@ from datetime import datetime
 class BookSerializer(serializers.ModelSerializer):  
     class Meta:
         model = Book
-        fields = ['id', 'title', 'publication_date', 'author']
+        fields = ['id', 'title', 'publication_year', 'author']
 
     #validate that title is not empty
     def validate_title(self, value):
         if not value.strip():
             raise serializers.ValidationError("Title cannot be empty.")
         return value
-    #validate that publication_date is not in the future
-    def validate_publication_date(self, value):
+    #validate that publication_year is not in the future
+    def validate_publication_year(self, value):
         if value > datetime.date.today().year:
             raise serializers.ValidationError("Publication date cannot be in the future.")
         return value
