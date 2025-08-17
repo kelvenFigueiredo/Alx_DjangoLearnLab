@@ -3,7 +3,7 @@ from api.models import Author, Book
 
 
 # Register your models here.
-# AuthorAdmin is used to manage Author model instances in the admin interface
+# AuthorAdmin is used to manage Author model instances in the admin interface.
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'author', 'publication_year')

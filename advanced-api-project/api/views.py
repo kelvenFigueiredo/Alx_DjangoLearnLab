@@ -15,7 +15,7 @@ class BookCreateView(generics.CreateAPIView):
             serializer.validated_data['publication_year'] = datetime.now().year
         serializer.save()
 
-# BookListView lists all books, accessible to authenticated users or read-only for others
+# BookListView lists all books, accessible to authenticated users or read-only for others.
 class BookListView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer

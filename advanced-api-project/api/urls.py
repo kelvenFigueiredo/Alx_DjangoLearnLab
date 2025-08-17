@@ -1,6 +1,7 @@
 from django.urls import path
 from api.views import BookCreateView, BookDetailView, BookUpdateView, BookDeleteView, BookListView
 
+# URL patterns for the API endpoints related to books
 urlpatterns = [
     path('books/', BookListView.as_view(), name='book-list'),
     path('books/create/', BookCreateView.as_view(), name='book-create'),
